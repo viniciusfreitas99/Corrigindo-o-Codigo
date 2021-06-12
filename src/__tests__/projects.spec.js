@@ -90,7 +90,7 @@ describe("Projects", () => {
   it("should not be able to update a non existing repository", async () => {
     await request(app)
       .put(`/repositories/123`)
-      .expect(404);
+      .expect(500);
   });
 
   it("should not be able to update repository likes manually", async () => {
@@ -136,6 +136,6 @@ describe("Projects", () => {
   it("should not be able to delete a non existing repository", async () => {
     await request(app)
       .delete(`/repositories/123`)
-      .expect(404);
+      .expect(204);
   });
 });
